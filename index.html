@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102523">
+  <meta name="description" content="설비소방학과 이요셉의 MyLink. 안전을 배우고, 아이디어를 만들고, 새로운 커리어의 가능성을 탐색합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="이요셉 · MyLink Station">
+  <meta property="og:description" content="안전은 설계하고, 가능성은 확장하다. 이요셉의 링크 스테이션.">
+  <title>이요셉 | MyLink Station</title>
+  <style>
+    :root {
+      --ink:#18302b; --deep:#102523; --deep2:#183936;
+      --cream:#f6f6ef; --paper:#fffefa; --line:#dde6de;
+      --muted:#67736d; --lime:#baf26d; --mint:#dff9e2;
+      --orange:#ffb68f; --shadow:0 17px 55px rgba(27,56,44,.07);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family: 'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',system-ui,sans-serif; -webkit-font-smoothing:antialiased; line-height:1.6; }
+    a { color:inherit; }
+    button { font:inherit; }
+    ::selection { background:#c9f68d; color:#173029; }
+    .skip { position:absolute; top:-60px; left:15px; background:white; color:black; padding:12px; z-index:20; }
+    .skip:focus { top:12px; }
+    .wrap { max-width:1180px; margin:auto; padding:0 34px; }
+    .site-header { position:relative; z-index:5; background:var(--deep); color:white; }
+    .nav-inner { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid #ffffff24; }
+    .wordmark { display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:850; letter-spacing:-.065em; font-size:22px; }
+    .mark { width:34px; height:34px; display:grid; place-items:center; border:1px solid #bdf27f; border-radius:10px; color:var(--lime); font-size:15px; letter-spacing:-.05em; transform:rotate(-8deg); }
+    .mark span { transform:rotate(8deg); }
+    .desktop-nav { display:flex; align-items:center; gap:30px; font-size:13px; font-weight:700; }
+    .desktop-nav a { text-decoration:none; opacity:.78; transition:opacity .2s; }
+    .desktop-nav a:hover, .desktop-nav a:focus-visible { opacity:1; }
+    .nav-pill { border:1px solid #c2f0826e; border-radius:40px; padding:10px 16px; color:var(--lime); font-size:11px; white-space:nowrap; letter-spacing:.05em; }
+    .dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:currentColor; vertical-align:middle; margin-right:7px; }
+    .hero { position:relative; overflow:hidden; color:white; background:var(--deep); }
+    .hero::before { content:""; position:absolute; top:20%; right:-10%; width:650px; height:650px; border-radius:50%; background:radial-gradient(circle,#4d806a46,transparent 66%); pointer-events:none; }
+    .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:12px; min-height:570px; align-items:center; padding-top:56px; padding-bottom:83px; }
+    .eyebrow { display:inline-flex; gap:9px; align-items:center; font-size:11px; font-weight:800; color:var(--lime); letter-spacing:.19em; text-transform:uppercase; }
+    .eyebrow::before { content:""; height:1px; width:27px; background:var(--lime); }
+    h1 { margin:26px 0 20px; font-size:clamp(43px,5.2vw,73px); line-height:1.17; letter-spacing:-.084em; font-weight:850; word-break:keep-all; }
+    h1 em { font-style:normal; color:var(--lime); }
+    .hero-desc { max-width:500px; margin:0 0 32px; color:#c0d0cb; font-size:16px; line-height:1.9; word-break:keep-all; }
+    .hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:13px; min-height:52px; padding:0 23px; border-radius:13px; font-weight:800; font-size:13px; letter-spacing:-.02em; text-decoration:none; transition:transform .2s, box-shadow .2s; cursor:pointer; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:var(--lime); color:var(--deep); border:1px solid var(--lime); box-shadow:0 14px 28px #baf26d1e; }
+    .btn-secondary { border:1px solid #81918c88; color:#f7fff9; background:transparent; }
+    .hero-kicker { display:flex; gap:13px; align-items:center; margin-top:31px; color:#a6bbb3; font-size:12px; }
+    .hero-kicker b { color:white; font-weight:700; }
+    .hero-kicker .line { width:28px; height:1px; background:#6b8077; }
+    .radar-wrap { display:flex; justify-content:center; align-items:center; position:relative; min-height:430px; isolation:isolate; }
+    .orbit { position:relative; width:min(100%,490px); aspect-ratio:1; display:grid; place-items:center; }
+    .orbit::before, .orbit::after { content:""; position:absolute; border:1px solid #9baea633; border-radius:50%; }
+    .orbit::before { inset:12%; }
+    .orbit::after { inset:0; border-style:dashed; }
+    .orbit-ring { position:absolute; inset:23%; border:1px solid #b8f27a52; border-radius:50%; box-shadow:0 0 65px #baf26d11; }
+    .radial { position:absolute; width:1px; height:94%; background:linear-gradient(transparent,#9ebbad30,transparent); transform:rotate(-43deg); }
+    .radial.two { transform:rotate(47deg); }
+    .avatar { position:relative; z-index:2; width:193px; height:193px; border-radius:50%; background:linear-gradient(140deg,#c4f59c,#69ac8d); box-shadow:0 0 0 12px #173a315e,0 0 0 22px #173b3059,0 25px 85px #010d093b; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#0f3229; transform:rotate(-7deg); }
+    .avatar span { font-size:68px; font-weight:900; line-height:1; letter-spacing:-.105em; }
+    .avatar small { font-size:10px; letter-spacing:.29em; font-weight:800; margin-top:7px; }
+    .float-tag { position:absolute; z-index:3; background:#ffffffef; border:1px solid #fff; box-shadow:0 16px 46px #031c164a; border-radius:15px; color:var(--deep); padding:13px 15px; text-align:left; line-height:1.3; }
+    .float-tag .tlabel { display:block; font-size:10px; letter-spacing:.11em; color:#5d7368; font-weight:800; margin-bottom:5px; }
+    .float-tag strong { font-size:14px; font-weight:850; letter-spacing:-.04em; }
+    .tag-1 { top:12%; left:2%; transform:rotate(-6deg); }
+    .tag-2 { right:-1%; top:27%; transform:rotate(6deg); background:var(--lime); border-color:var(--lime); }
+    .tag-3 { bottom:10%; left:15%; transform:rotate(4deg); background:var(--paper); }
+    .tiny-star { position:absolute; right:10%; bottom:14%; color:var(--lime); font-size:36px; }
+    main { overflow:hidden; }
+    .idstrip { transform:translateY(-34px); position:relative; z-index:3; min-height:82px; display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:0; border-radius:19px; background:white; box-shadow:0 12px 45px #173a2620; border:1px solid #e8ece6; overflow:hidden; }
+    .idcell { display:flex; flex-direction:column; justify-content:center; padding:17px 30px; min-width:0; }
+    .idcell + .idcell { border-left:1px solid #e3e9e2; }
+    .idcell span { font-size:10px; letter-spacing:.13em; color:#839188; font-weight:800; margin-bottom:5px; }
+    .idcell strong { font-size:14px; font-weight:800; color:#233e35; }
+    .section { padding:76px 0 28px; }
+    .sec-head { display:flex; justify-content:space-between; gap:25px; align-items:end; margin-bottom:31px; }
+    .sec-tag { color:#5c8068; font-size:11px; letter-spacing:.19em; font-weight:900; }
+    h2 { margin:10px 0 0; font-size:clamp(29px,3.5vw,42px); line-height:1.24; letter-spacing:-.063em; word-break:keep-all; }
+    .sec-aside { color:#6c7d74; font-size:13px; max-width:330px; margin:0 0 3px; line-height:1.75; }
+    .quick-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .quick-card { min-height:162px; display:flex; justify-content:space-between; gap:15px; align-items:stretch; padding:25px 26px; border-radius:19px; background:white; border:1px solid #e3ebe4; text-decoration:none; box-shadow:var(--shadow); transition:transform .22s, border .22s, box-shadow .22s; }
+    .quick-card:hover { transform:translateY(-4px); border-color:#9ebea8; box-shadow:0 20px 52px #253e2a19; }
+    .quick-card:focus-visible, .btn:focus-visible, .chips button:focus-visible, .copy-btn:focus-visible { outline:3px solid #ffad75; outline-offset:4px; }
+    .quick-left { display:flex; flex-direction:column; align-items:start; }
+    .number { font-size:11px; font-weight:900; letter-spacing:.13em; color:#648a6c; margin-bottom:18px; }
+    .quick-card h3 { margin:0 0 6px; font-size:22px; letter-spacing:-.06em; line-height:1.2; }
+    .quick-card p { margin:0; color:var(--muted); font-size:12px; line-height:1.65; }
+    .round-arrow { flex:none; width:42px; height:42px; display:grid; place-items:center; border-radius:50%; background:#eef6ec; color:#23603b; align-self:flex-end; font-size:18px; }
+    .quick-card.feature { background:var(--mint); border-color:#c8e4ce; }
+    .quick-card.feature .round-arrow { background:#17392f; color:var(--lime); }
+    .quick-card.orange { background:#fff0e6; border-color:#f8decf; }
+    .quick-card.orange .round-arrow { background:#592f21; color:#ffd7b1; }
+    .about-section { margin-top:92px; padding:72px 0; background:#e8efea; position:relative; }
+    .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:70px; align-items:center; }
+    .quote { margin:24px 0; font-size:clamp(25px,3vw,38px); font-weight:800; letter-spacing:-.07em; line-height:1.44; word-break:keep-all; }
+    .quote em { font-style:normal; box-shadow:inset 0 -.23em #c5eca7; }
+    .about-body { color:#576d62; font-size:15px; line-height:2; margin:0; word-break:keep-all; }
+    .about-board { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:170px 170px; gap:12px; }
+    .board-tile { border-radius:20px; background:#fffcf8; padding:22px; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border:1px solid #d9e5dc; }
+    .board-tile.long { grid-row:span 2; background:#173a34; color:white; }
+    .tile-icon { width:42px; height:42px; border-radius:13px; background:#cdf0c7; color:#14462c; display:grid; place-items:center; font-size:22px; }
+    .long .tile-icon { background:#315b4b; color:var(--lime); }
+    .board-tile small { color:#7a9181; font-size:10px; letter-spacing:.14em; font-weight:850; }
+    .long small { color:#b9d4c4; }
+    .board-tile strong { font-size:22px; line-height:1.4; font-weight:850; letter-spacing:-.06em; }
+    .board-tile.long strong { font-size:28px; }
+    .filter-wrap { display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin:0 0 24px; }
+    .chips button { border-radius:30px; padding:8px 15px; color:#617269; background:#ffffff; border:1px solid #dce6dc; font-weight:800; font-size:12px; cursor:pointer; transition:background .2s,color .2s; }
+    .chips button[aria-pressed="true"] { background:#193a30; color:#e7f3d9; border-color:#193a30; }
+    .focus-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+    .focus-card { background:white; border:1px solid #e2e9e1; border-radius:20px; min-height:268px; padding:25px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+    .focus-card[hidden] { display:none; }
+    .focus-no { display:inline-block; align-self:flex-start; padding:5px 10px; border-radius:8px; background:#eef5e9; color:#50704d; font-weight:800; font-size:10px; margin-bottom:auto; }
+    .focus-sym { width:53px; height:53px; display:grid; place-items:center; font-size:27px; border-radius:14px; background:#f3f7f2; color:#2f674d; margin:25px 0 17px; }
+    .focus-card h3 { margin:0 0 9px; font-size:20px; letter-spacing:-.06em; }
+    .focus-card p { margin:0; font-size:13px; line-height:1.8; color:#6b7770; word-break:keep-all; }
+    .roadmap { padding-top:92px; padding-bottom:100px; }
+    .road-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; position:relative; margin-top:29px; }
+    .road-card { position:relative; padding:26px; border-radius:20px; background:#15352f; color:#f2f9f1; min-height:224px; overflow:hidden; }
+    .road-card:nth-child(2) { background:#224b3c; }
+    .road-card:nth-child(3) { background:#32624a; }
+    .road-card::after { content:attr(data-step); position:absolute; right:-4px; top:-29px; font-size:133px; font-weight:900; letter-spacing:-.14em; color:#ffffff0b; }
+    .road-card small { font-size:11px; letter-spacing:.16em; font-weight:800; color:var(--lime); }
+    .road-card h3 { font-size:21px; margin:31px 0 10px; letter-spacing:-.06em; }
+    .road-card p { font-size:13px; line-height:1.8; color:#cce0d3; margin:0; }
+    .outbound { padding:30px 0 95px; }
+    .ref-box { background:white; border-radius:22px; border:1px solid #e1e8df; padding:26px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px; }
+    .ref-box h3 { margin:0 0 5px; font-size:19px; letter-spacing:-.05em; }
+    .ref-box p { margin:0; color:#697a6d; font-size:13px; }
+    .ref-links { display:flex; gap:10px; flex-wrap:wrap; }
+    .ref-links a, .copy-btn { text-decoration:none; padding:11px 16px; border-radius:10px; border:1px solid #d6e3d7; font-size:12px; font-weight:800; color:#244f38; background:#f8fbf6; cursor:pointer; }
+    .ref-links a:hover,.copy-btn:hover { background:#e8f3e4; }
+    footer { background:#102523; color:white; padding:28px 0; }
+    .footer-line { display:flex; justify-content:space-between; align-items:center; gap:18px; font-size:12px; color:#b3c7bd; }
+    .footer-line b { color:white; letter-spacing:-.04em; }
+    .toast { position:fixed; right:20px; bottom:20px; background:#173b31; color:#fff; border:1px solid #baf26d88; box-shadow:0 14px 40px #0005; border-radius:12px; padding:11px 16px; font-size:13px; z-index:40; opacity:0; transform:translateY(10px); pointer-events:none; transition:opacity .22s,transform .22s; }
+    .toast.show { opacity:1; transform:translateY(0); }
+    @media (max-width:950px) { .hero-grid { grid-template-columns:1fr .78fr; } .float-tag { padding:10px 11px; } .float-tag strong { font-size:12px; } .avatar { width:150px;height:150px; } .avatar span { font-size:55px; } .idcell { padding-left:20px; padding-right:15px; } .about-grid { gap:32px; } }
+    @media (max-width:760px) { .wrap { padding-left:20px; padding-right:20px; } .desktop-nav { display:none; } .nav-inner { min-height:67px; } .nav-pill { font-size:10px; } .hero-grid { grid-template-columns:1fr; padding-top:58px; padding-bottom:64px; } h1 { font-size:clamp(42px,9vw,60px); } .hero-desc { font-size:14px; margin-bottom:26px; } .radar-wrap { min-height:345px; margin-top:10px; } .orbit { width:min(100%,350px); } .avatar { width:148px;height:148px; } .tag-1 { left:0;top:9%; } .tag-2 { right:0;top:23%; } .tag-3 { left:10%;bottom:4%; } .idstrip { grid-template-columns:1fr 1fr; } .idcell:first-child { grid-column:span 2; border-bottom:1px solid #e5ede6; } .idcell:nth-child(2) { border-left:0; } .idcell { padding:13px 20px; } .section { padding-top:52px; } .sec-head { display:block; } .sec-aside { margin-top:12px; } .quick-grid { grid-template-columns:1fr; } .quick-card { min-height:140px; } .about-grid { grid-template-columns:1fr; gap:34px; } .about-section { margin-top:72px; padding:58px 0; } .about-board { max-width:480px; } .focus-grid { grid-template-columns:1fr; } .focus-card { min-height:220px; } .road-grid { grid-template-columns:1fr; } .road-card { min-height:196px; } .roadmap { padding-top:65px; padding-bottom:65px; } .footer-line { align-items:start; flex-direction:column; } }
+    @media (max-width:380px) { .nav-pill { display:none; } .wrap { padding-left:15px; padding-right:15px; } .quick-card { padding:22px 19px; } .avatar { width:130px; height:130px; } .float-tag { max-width:125px; } .tag-2 { right:-5px; } .tag-3 { left:5%; } .about-board { grid-template-rows:155px 155px; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="wrap nav-inner">
+      <a class="wordmark" href="#top" aria-label="MyLink 맨 위로"><span class="mark"><span>YJ</span></span> MYLINK<span style="color:var(--lime)">.</span></a>
+      <nav class="desktop-nav" aria-label="주요 탐색"><a href="#links">바로가기</a><a href="#about">소개</a><a href="#focus">관심 분야</a><a href="#roadmap">로드맵</a></nav>
+      <span class="nav-pill"><span class="dot"></span> LINK STATION / 2026</span>
+    </div>
+  </header>
+  <div id="top" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">BUILD · LEARN · EXPLORE</div>
+        <h1>안전은 설계하고,<br><em>가능성은 확장한다.</em></h1>
+        <p class="hero-desc">안전한 시스템을 고민하는 전공에서 출발해, 새로운 기술과 진로의 가능성까지 탐색하는 중입니다. 이곳은 그 과정을 연결한 작은 나만의 링크 스테이션입니다.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#links">링크 둘러보기 <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-secondary" href="#about">이요셉 알아보기 <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-kicker"><b>이요셉</b><span class="line"></span>설비소방학과 <span class="line"></span>아이디어를 현실로</div>
+      </div>
+      <div class="radar-wrap" aria-hidden="true">
+        <div class="orbit"><div class="radial"></div><div class="radial two"></div><div class="orbit-ring"></div>
+          <div class="avatar"><span>YJ</span><small>MY LINK</small></div>
+          <div class="float-tag tag-1"><span class="tlabel">01 / ENGINEERING</span><strong>설비 · 소방</strong></div>
+          <div class="float-tag tag-2"><span class="tlabel">02 / CREATIVITY</span><strong>VIBE CODING</strong></div>
+          <div class="float-tag tag-3"><span class="tlabel">03 / NEXT STEP</span><strong>새로운 진로 탐색</strong></div>
+          <span class="tiny-star">✳</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main id="main">
+    <div class="wrap"><div class="idstrip" aria-label="프로필 요약">
+      <div class="idcell"><span>NAME / 이름</span><strong>이요셉 <span style="font-weight:600;color:#789080">· MYLINK OWNER</span></strong></div>
+      <div class="idcell"><span>MAJOR / 전공</span><strong>설비소방학과</strong></div>
+      <div class="idcell"><span>MY KEYWORD / 관심</span><strong>안전 · 기술 · 성장</strong></div>
+    </div></div>
+    <section id="links" class="section wrap" aria-labelledby="links-title">
+      <div class="sec-head"><div><span class="sec-tag">01 / QUICK LINKS</span><h2 id="links-title">내 관심사로 가는 네 가지 길</h2></div><p class="sec-aside">단순한 링크 모음이 아니라, 요즘 내가 배우고 고민하는 주제를 따라갈 수 있도록 구성했습니다.</p></div>
+      <div class="quick-grid">
+        <a class="quick-card feature" href="#about"><div class="quick-left"><span class="number">LINK 01 / ME</span><h3>나에 대해</h3><p>전공에서 출발한 나만의 관점</p></div><span class="round-arrow" aria-hidden="true">↗</span></a>
+        <a class="quick-card" href="#focus"><div class="quick-left"><span class="number">LINK 02 / WHAT I LEARN</span><h3>요즘의 관심사</h3><p>안전, 만들기, 새로운 전문성</p></div><span class="round-arrow" aria-hidden="true">↗</span></a>
+        <a class="quick-card" href="#roadmap"><div class="quick-left"><span class="number">LINK 03 / MY DIRECTION</span><h3>나만의 로드맵</h3><p>한 번에 정답을 정하기보다, 시도하며 찾기</p></div><span class="round-arrow" aria-hidden="true">↗</span></a>
+        <a class="quick-card orange" href="#resources"><div class="quick-left"><span class="number">LINK 04 / USEFUL LINKS</span><h3>함께 보는 사이트</h3><p>공식 자격정보와 개발 플랫폼</p></div><span class="round-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="wrap about-grid">
+      <div><span class="sec-tag">02 / ABOUT ME</span><h2 id="about-title">나를 소개합니다.</h2><p class="quote">한 가지 전공에서 시작해<br><em>여러 가능성을 연결</em>하는 사람.</p><p class="about-body">설비소방학과에서 배우는 것은 단지 장비와 도면만이 아닙니다. 문제를 미리 발견하고, 시스템을 이해하며, 작은 오류도 놓치지 않는 태도라고 생각합니다. 여기에 AI 도구를 활용해 직접 만들어보는 경험과 새로운 직업에 대한 탐색을 더하고 있습니다.</p></div>
+      <div class="about-board" aria-label="핵심 키워드 세 가지">
+        <div class="board-tile long"><div class="tile-icon" aria-hidden="true">⌁</div><div><small>MY BASE</small><strong>작은 위험도<br>놓치지 않는<br>설계적 사고</strong></div></div>
+        <div class="board-tile"><div class="tile-icon" aria-hidden="true">✦</div><div><small>MY METHOD</small><strong>직접 만들고<br>확인하기</strong></div></div>
+        <div class="board-tile"><div class="tile-icon" aria-hidden="true">↗</div><div><small>MY NEXT</small><strong>새로운 분야로<br>확장하기</strong></div></div>
+      </div>
+    </div></section>
+    <section id="focus" class="section wrap" aria-labelledby="focus-title">
+      <div class="sec-head"><div><span class="sec-tag">03 / AREA OF INTEREST</span><h2 id="focus-title">관심 분야를 연결하다</h2></div><p class="sec-aside">아래 필터를 눌러 관심 분야를 골라보세요. 선택한 분야의 카드만 볼 수 있습니다.</p></div>
+      <div class="filter-wrap chips" role="group" aria-label="관심 분야 필터">
+        <button type="button" data-filter="all" aria-pressed="true">전체</button><button type="button" data-filter="engineering" aria-pressed="false">전공</button><button type="button" data-filter="making" aria-pressed="false">만들기</button><button type="button" data-filter="career" aria-pressed="false">진로</button>
+      </div>
+      <div class="focus-grid" aria-live="polite">
+        <article class="focus-card" data-category="engineering"><span class="focus-no">SYSTEM / 01</span><span class="focus-sym" aria-hidden="true">▤</span><h3>설비 · 소방</h3><p>사람이 안심할 수 있는 공간을 만들기 위해, 시스템이 어떻게 작동하고 관리되는지 배웁니다.</p></article>
+        <article class="focus-card" data-category="making"><span class="focus-no">CREATE / 02</span><span class="focus-sym" aria-hidden="true">⌘</span><h3>바이브 코딩</h3><p>코드를 외우는 데서 그치지 않고, 떠오른 아이디어를 AI와 함께 작은 결과물로 바꿔봅니다.</p></article>
+        <article class="focus-card" data-category="career"><span class="focus-no">EXPLORE / 03</span><span class="focus-sym" aria-hidden="true">◈</span><h3>전문직과 진로 탐색</h3><p>지금의 전공을 토대로 다른 전문 분야까지 살펴보며 오래 성장할 수 있는 경로를 고민합니다.</p></article>
+      </div>
+    </section>
+    <section class="roadmap wrap" id="roadmap" aria-labelledby="road-title"><div class="sec-head"><div><span class="sec-tag">04 / ROADMAP</span><h2 id="road-title">내가 생각하는 세 가지 성장 단계</h2></div><p class="sec-aside">정해진 정답보다, 탐색하고 검증하면서 내 방향을 찾아가는 계획입니다.</p></div>
+      <div class="road-grid">
+        <article class="road-card" data-step="1"><small>STEP 01</small><h3>기초 다지기</h3><p>전공 지식을 깊게 이해하고, 내게 맞는 분야를 실제 경험으로 확인합니다.</p></article>
+        <article class="road-card" data-step="2"><small>STEP 02</small><h3>작게 실행하기</h3><p>바이브 코딩과 디지털 도구로 생활 속 문제를 해결하는 작은 프로젝트를 시도합니다.</p></article>
+        <article class="road-card" data-step="3"><small>STEP 03</small><h3>나만의 강점 만들기</h3><p>안전, 기술, 분석을 연결해 다른 사람에게도 도움이 되는 전문성을 쌓아갑니다.</p></article>
+      </div>
+    </section>
+    <section id="resources" class="outbound wrap" aria-labelledby="resources-title"><div class="ref-box">
+      <div><h3 id="resources-title">자주 참고할 만한 곳</h3><p>실제 작동하는 외부 링크입니다. 개인 SNS·연락처는 공개하지 않았습니다.</p></div>
+      <div class="ref-links"><a href="https://www.q-net.or.kr/" target="_blank" rel="noopener noreferrer" aria-label="큐넷 공식 홈페이지 새 창">국가자격정보 ↗</a><a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="깃허브 홈페이지 새 창">GitHub ↗</a><button class="copy-btn" id="copyIntro" type="button">소개 문구 복사 ⧉</button></div>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-line"><div><b>YJ MYLINK.</b> &nbsp;나의 가능성을 연결하는 작은 스테이션</div><div>이요셉 · 설비소방학과 &nbsp; | &nbsp; © 2026</div></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      'use strict';
+      const cards = Array.from(document.querySelectorAll('.focus-card'));
+      const filters = Array.from(document.querySelectorAll('[data-filter]'));
+      filters.forEach(button => button.addEventListener('click', () => {
+        const value = button.dataset.filter;
+        filters.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+        cards.forEach(card => { card.hidden = value !== 'all' && card.dataset.category !== value; });
+      }));
+      const toast = document.getElementById('toast');
+      let toastTimer;
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+      }
+      document.getElementById('copyIntro').addEventListener('click', async () => {
+        const intro = '이요셉 | 설비소방학과 · 안전은 설계하고, 가능성은 확장한다.';
+        try {
+          if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('clipboard unavailable');
+          await navigator.clipboard.writeText(intro);
+          showToast('소개 문구를 복사했어요.');
+        } catch (e) {
+          showToast('이 브라우저에서는 복사가 제한됩니다.');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
